@@ -18,7 +18,8 @@
   "main": "index.js",
   "repository": "git@github.com:brwnll/gulp-version-filename.git",
   "scripts": {
-    "test": "node test/test.js"
+    "coverage": "istanbul cover test/*.js --report lcovonly",
+    "test": "npm run coverage && node test/test.js"
   },
   "devDependencies": {
     "rimraf": "^2.4.2",
