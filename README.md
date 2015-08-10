@@ -1,4 +1,4 @@
-Gulp Version Filename
+Gulp Version Filename ![circle ci](https://circleci.com/gh/brwnll/gulp-version-filename.svg?style=shield&circle-token=:circle-token) ![code climate](https://codeclimate.com/github/brwnll/gulp-version-filename/badges/gpa.svg)
 =====================
 
 Takes the version number from within a file and adds it to the filename. This
