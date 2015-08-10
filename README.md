@@ -1,4 +1,4 @@
-Gulp Version Filename ![circle ci](https://circleci.com/gh/brwnll/gulp-version-filename.svg?style=shield&circle-token=:circle-token) ![code climate](https://codeclimate.com/github/brwnll/gulp-version-filename/badges/gpa.svg)
+Gulp Version Filename ![circle ci](https://circleci.com/gh/brwnll/gulp-version-filename.svg?style=shield&circle-token=:circle-token) ![code climate](https://codeclimate.com/github/brwnll/gulp-version-filename/badges/gpa.svg) [![npm version](https://badge.fury.io/js/gulp-version-filename.svg)](https://www.npmjs.com/package/gulp-version-filename)
 =====================
 
 Takes the version number from within a file and adds it to the filename. This
@@ -16,7 +16,7 @@ How to Use
 
 Install module.
 ```bash
-npm install gulp-version-filename
+npm i gulp-version-filename
 ```
 
 
@@ -33,7 +33,6 @@ gulpfile.js
 ```javascript
 
 var filever = require('gulp-version-filename');
-
 
 /**
  * Takes the version number and adds it to the filename
