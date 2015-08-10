@@ -1,0 +1,28 @@
+{
+  "name": "gulp-version-filename",
+  "description": "Pull versioning from a file and add it to the filename.",
+  "version": "1.0.0",
+  "author": "Dustin Brownell <dustin@smalldo.gs>",
+  "bugs": "https://github.com/brwnll/gulp-version-filename/issues",
+  "engines": {
+    "node": ">= 0.9"
+  },
+  "homepage": "https://github.com/brwnll/gulp-version-filename",
+  "keywords": [
+    "gulpplugin",
+    "filename",
+    "versioning",
+    "semver"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "git@github.com:brwnll/gulp-version-filename.git",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "rimraf": "^2.4.2",
+    "tape": "^4.0.3",
+    "vinyl": "^0.5.1"
+  }
+}

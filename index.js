@@ -7,9 +7,12 @@ module.exports = function(options) {
 
   var stream = new Stream.Transform({ objectMode: true });
 
+  options = options || {};
+
   stream._transform = function (file, filetype, callback) {
     var contents = file.contents.toString();
     var version;
+    var versionRegEx;
     var components;
 
     // Load up option parameters
@@ -21,19 +24,19 @@ module.exports = function(options) {
       // If user wants to ignore files without the key, don't make a fuss
       if (options.silent) return callback(null, file);
       // Otherwise, raise hell
-      throw Error('Missing version key @' + key + ' in ' + file.relative);
+      return stream.emit('error', new Error('Missing version key @' + key + ' in ' + file.relative));
     }
 
     // The first result is the entire match, the second is only the version string
-    version = contents.match(/@version ([^ ]*)/i)[1];
+    versionRegEx = new RegExp('@' + key + ' ([^ ]*)', 'i')
+    version = contents.match(versionRegEx)[1];
     // Break up the file name to splice in our version
     components = file.relative.split('.');
 
     // File extension should be the final component, add the version to the
     // segment before it
     components[components.length - 2] += '-' + version;
-
-    file.path = file.base + components.join('.');
+    file.path = Path.join(file.base, components.join('.'));
 
     // Rename sourcemap if present
     if (file.sourceMap) {
