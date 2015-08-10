@@ -6,14 +6,18 @@ is specifically useful for pipelines outputting JS or CSS files. Allows for
 versioning controlled by you, instead of a hash, allowing for the use of human
 understandable sequencing (such as semver).
 
-eg: `myjslibrary-2.1.0.min.js`
+```
+eg: myjslibrary-2.1.0.min.js
+```
 
 
 How to Use
 ----------
 
 Install module.
-`npm install gulp-version-filename`
+```bash
+npm install gulp-version-filename
+```
 
 
 Somewhere Within Your CSS/JS/etc File
@@ -42,9 +46,14 @@ gulp.task('rename', function() {
 
 ```
 
-`gulp rename`
+```bash
+gulp rename
+````
 
-You should now have `dist/newcssfile-8.12.12.css`.
+You should now have 
+```bash
+dist/newcssfile-8.12.12.css
+```
 
 Options
 -------
