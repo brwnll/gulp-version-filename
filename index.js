@@ -36,8 +36,8 @@ module.exports = function(options) {
     // File extension should be the final component, add the version to the
     // segment before it
     components[components.length - 2] += '-' + version;
-    file.path = Path.join(file.base, components.join('.'));
-
+    file.path = Path.join(file.base, components.join('.')).replace("\n", "");
+    
     // Rename sourcemap if present
     if (file.sourceMap) {
       file.sourceMap.file = file.relative;
