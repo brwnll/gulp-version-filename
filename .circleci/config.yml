@@ -5,15 +5,9 @@ jobs:
       - image: circleci/node:dubnium
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "yarn-lock.json" }}
       - run:
-          name: install-yarn-wee
+          name: install-yarn
           command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "yarn-lock.json" }}
-          paths:
-            - ./node_modules
       - run:
           name: test
           command: yarn test
