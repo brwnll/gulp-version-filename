@@ -1,6 +1,12 @@
 const Stream = require("stream");
 const Path = require("path");
 
+function extractVersion(contents) {
+  // The first result is the entire match, the second is only the version string
+  const versionRegEx = new RegExp("@" + key + " ([^ ]*)", "i");
+  return contents.match(versionRegEx)[1].trim();
+}
+
 module.exports = function (options) {
   const stream = new Stream.Transform({ objectMode: true });
 
@@ -8,9 +14,6 @@ module.exports = function (options) {
 
   stream._transform = function (file, filetype, callback) {
     let contents = file.contents.toString();
-    let version;
-    let versionRegEx;
-    let components;
 
     // Load up option parameters
     let key = options.key || "version";
@@ -27,12 +30,10 @@ module.exports = function (options) {
       );
     }
 
-    // The first result is the entire match, the second is only the version string
-    versionRegEx = new RegExp("@" + key + " ([^ ]*)", "i");
-    version = contents.match(versionRegEx)[1];
-    version = version.trim();
+    const version = extractVersion(contents);
+
     // Break up the file name to splice in our version
-    components = file.relative.split(".");
+    const components = file.relative.split(".");
 
     // File extension should be the final component, add the version to the
     // segment before it
