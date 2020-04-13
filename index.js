@@ -30,6 +30,7 @@ module.exports = function(options) {
     // The first result is the entire match, the second is only the version string
     versionRegEx = new RegExp('@' + key + ' ([^ ]*)', 'i');
     version = contents.match(versionRegEx)[1];
+    version = version.trim()
     // Break up the file name to splice in our version
     components = file.relative.split('.');
 
