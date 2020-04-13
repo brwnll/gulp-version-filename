@@ -1,7 +1,7 @@
 const Stream = require("stream");
 const Path = require("path");
 
-function extractVersion(contents) {
+function extractVersion(contents, key) {
   // The first result is the entire match, the second is only the version string
   const versionRegEx = new RegExp("@" + key + " ([^ ]*)", "i");
   return contents.match(versionRegEx)[1].trim();
@@ -30,7 +30,7 @@ module.exports = function (options) {
       );
     }
 
-    const version = extractVersion(contents);
+    const version = extractVersion(contents, key);
 
     // Break up the file name to splice in our version
     const components = file.relative.split(".");
