@@ -5,7 +5,7 @@
   "author": "Dustin Brownell <dustin@smalldo.gs>",
   "bugs": "https://github.com/brwnll/gulp-version-filename/issues",
   "engines": {
-    "node": ">= 0.9"
+    "node": ">= 6.4"
   },
   "homepage": "https://github.com/brwnll/gulp-version-filename",
   "keywords": [
@@ -22,8 +22,7 @@
     "test": "npm run coverage && node test/test.js"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.3.3",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.6.5",
     "istanbul": "^0.4.4",
     "tape": "^4.6.0",
     "uglify-js": "^2.7.0",
