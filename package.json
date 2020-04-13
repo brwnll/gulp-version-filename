@@ -1,7 +1,7 @@
 {
   "name": "gulp-version-filename",
   "description": "Pull versioning from a file and add it to the filename.",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "author": "Dustin Brownell <dustin@smalldo.gs>",
   "bugs": "https://github.com/brwnll/gulp-version-filename/issues",
   "engines": {
